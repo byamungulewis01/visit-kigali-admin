@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Resources\PlaceResource;
 use App\Models\Place;
 use App\Models\Booking;
 use App\Models\Review;
@@ -28,7 +29,10 @@ Route::get('/places', function () {
     return response()->json($places);
 });
 Route::get('/places/{id}', function ($id) {
-    $place = Place::with('reviews')->findOrFail($id);
+
+    // $place = Place::with('reviews')->findOrFail($id);
+    // return response()->json($place);
+    $place = new PlaceResource(Place::with('reviews')->findOrFail($id));
     return response()->json($place);
 });
 
@@ -72,8 +76,8 @@ Route::post('/search-tourist', function (Request $request) {
 
         // Search for tourist by email or phone
         $tourist = Tourist::where('email', $searchTerm)
-                          ->orWhere('phone', $searchTerm)
-                          ->first();
+            ->orWhere('phone', $searchTerm)
+            ->first();
 
         if ($tourist) {
             // Tourist found

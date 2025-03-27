@@ -1,7 +1,7 @@
 @component('mail::message')
 # Booking Status Update
 
-Dear {{ $booking->name }},
+Dear {{ $booking->tourist->fname }},
 
 Your booking request for **{{ $booking->booking_date->format('d M, Y H:i:s') }}** at **{{ $booking->place->name }}** has been **{{ ucfirst($booking->status) }}**.
 

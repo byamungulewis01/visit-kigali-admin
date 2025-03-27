@@ -20,4 +20,11 @@ class Review extends Model
     {
         return $this->belongsTo(Place::class);
     }
+
+    public function tourist()
+    {
+        return $this->belongsTo(Tourist::class);
+    }
+
+
 }

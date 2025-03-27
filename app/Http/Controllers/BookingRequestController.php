@@ -62,7 +62,7 @@ class BookingRequestController extends Controller
         ]);
 
         // Send approval email
-        Mail::to($booking->email)->send(new BookingStatusMail($booking, 'Your booking has been successfully approved.'));
+        Mail::to($booking->tourist->email)->send(new BookingStatusMail($booking, 'Your booking has been successfully approved.'));
 
         return back()->with('message', "Request Approved Successfully");
     }
@@ -75,7 +75,7 @@ class BookingRequestController extends Controller
         ]);
 
         // Send rejection email
-        Mail::to($booking->email)->send(new BookingStatusMail($booking, $request->reject_message));
+        Mail::to($booking->tourist->email)->send(new BookingStatusMail($booking, $request->reject_message));
 
         return back()->with('message', "Request Rejected Successfully");
     }
