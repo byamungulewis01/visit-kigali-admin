@@ -35,7 +35,8 @@
                         <tr>
                             <th scope="col" style="width: 20px;">#</th>
                             <th class="sort" data-sort="place">Place</th>
-                            <th class="sort" data-sort="name">Name</th>
+                            <th class="sort" data-sort="fname">First Name</th>
+                            <th class="sort" data-sort="lname">Last Name</th>
                             <th class="sort" data-sort="email">Email</th>
                             <th class="sort" data-sort="booking_date">Booking Date</th>
                             <th class="sort" data-sort="approved_date">Approved Date</th>
@@ -51,11 +52,14 @@
                                 <td data-column-id="product" class="gridjs-td">
                                     <h5 class="fs-14 mb-1">{{ $booking->place->name }}</h5>
                                 </td>
-                                <td data-column-id="name" class="gridjs-td">
-                                    {{ $booking->name }}
+                                <td data-column-id="fname" class="gridjs-td">
+                                    {{ $booking->tourist->fname }}
+                                </td>
+                                <td data-column-id="lname" class="gridjs-td">
+                                    {{ $booking->tourist->lname }}
                                 </td>
                                 <td data-column-id="email" class="gridjs-td">
-                                    {{ $booking->email }}
+                                    {{ $booking->tourist->email }}
                                 </td>
                                 <td data-column-id="booking_date" class="gridjs-td">
                                     {{ $booking->booking_date->format('d M, Y H:i:s') }}

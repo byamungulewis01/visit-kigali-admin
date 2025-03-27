@@ -66,8 +66,8 @@
                             <tbody>
                                 @foreach ($bookings as $booking)
                                     <tr>
-                                        <td>{{ $booking->name }}</td>
-                                        <td>{{ $booking->email }}</td>
+                                        <td>{{ $booking->tourist->fname }} {{ $booking->tourist->lname }}</td>
+                                        <td>{{ $booking->tourist->email }}</td>
                                         <td>{{ $booking->place->name }}</td>
                                         <td>{{ $booking->booking_date->format('d M, Y H:i:s') }}</td>
                                         <td>

@@ -9,8 +9,7 @@ class Review extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'email',
+        'tourist_id',
         'content',
         'rating',
         'is_top_rated',

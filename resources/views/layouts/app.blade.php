@@ -2,9 +2,6 @@
 <html lang="en" data-layout="vertical" data-layout-style="detached" data-layout-position="fixed" data-topbar="light"
     data-sidebar="dark" data-sidebar-size="lg" data-layout-width="fluid">
 
-
-<!-- Mirrored from themesbrand.com/velzon/html/default/layouts-detached.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Apr 2024 09:22:34 GMT -->
-
 <head>
 
     <meta charset="utf-8" />
@@ -88,14 +85,6 @@
     </button>
     <!--end back-to-top-->
 
-    <!--preloader-->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner-border text-primary avatar-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-    </div>
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

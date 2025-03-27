@@ -12,8 +12,7 @@ return new class extends Migration {
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
+            $table->foreignId('tourist_id')->constrained()->cascadeOnDelete();
             $table->string('content');
             $table->enum('rating', [1, 2, 3, 4, 5]);
             $table->boolean('is_top_rated')->default(true);

@@ -9,8 +9,7 @@ class Booking extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'email',
+        'tourist_id',
         'comment',
         'booking_date',
         'status',
@@ -22,6 +21,10 @@ class Booking extends Model
     public function place()
     {
         return $this->belongsTo(Place::class);
+    }
+    public function tourist()
+    {
+        return $this->belongsTo(Tourist::class);
     }
     protected $casts = [
         'booking_date' => 'datetime',
